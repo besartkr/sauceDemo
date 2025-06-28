@@ -1,9 +1,7 @@
 package utils;
 
 import io.cucumber.java.cs.Ale;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,4 +23,15 @@ public class WaitUtils {
     public WebElement waitForElementToBeClickable(By locator) {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
+    public static boolean handleAlertIfPresent(WebDriver driver) {
+        try {
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
 }

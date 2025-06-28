@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.Alert;
 import pages.LoginPage;
 import pages.ProductsPage;
 import utils.DriverManager;
@@ -35,7 +36,7 @@ public class LoginSteps {
 
     @Then("user should be logged in")
     public void loggedInConfirmation() {
-        new ProductsPage().openCart();
+      new ProductsPage().openCart();
     }
 
     @Then("user should see a error message")
@@ -45,6 +46,18 @@ public class LoginSteps {
 
     @And("user logs in with problem_username")
     public void userLogsInWithProblem_username() {
-            loginPage.login("problem_user", "secret_sauce");
-        }
+        loginPage.login("problem_user", "secret_sauce");
     }
+
+
+    @When("user logs in with valid username \"([^\\\"]*)\" and password as \"([^\"]*)\"$")
+    public void userLogsInWithValidUsernameUsernameAndPasswordPasswordCredentials(String user, String pass) {
+
+        loginPage.multiUserlogin(user, pass);
+    }
+
+    @And("logout from the application")
+    public void logoutFromTheApplication() {
+        loginPage.logoutFromApplication();
+    }
+}

@@ -1,27 +1,29 @@
 @regression
 Feature: Login valid / invalid scenarios
 
-  Scenario: Successful login
-    Given user navigates to the login page
-    When user logs in with valid credentials
-    Then user should be logged in
-
-  Scenario: Failed login with invalid credentials
-    Given user navigates to the login page
-    When user logs in with invalid credentials
-    Then user should see a error message
-
-#  Scenario Outline: Login with all available users
+#  Scenario: Successful login
 #    Given user navigates to the login page
-#    When user logs in with valid <username> and <password> credentials
+#    When user logs in with valid credentials
 #    Then user should be logged in
-#    Examples: | username      | password     |
-#    | standard_user | secret_sauce |
-#    | problem_user | secret_sauce |
-#    | performance_glitch_user | secret_sauce |
-#    | error_user | secret_sauce |
-#    | visual_user | secret_sauce |
 #
+#  Scenario: Failed login with invalid credentials
+#    Given user navigates to the login page
+#    When user logs in with invalid credentials
+#    Then user should see a error message
+
+  Scenario Outline: Login with all available users
+    Given user navigates to the login page
+    When user logs in with valid username "<username>" and password as "<password>"
+    Then user should be logged in
+    And logout from the application
+    Examples:
+    | username                | password     |
+    | standard_user           | secret_sauce |
+    | problem_user            | secret_sauce |
+    | performance_glitch_user | secret_sauce |
+    | error_user              | secret_sauce |
+    | visual_user             | secret_sauce |
+
 
     #  Scenario: Failed login with correct UserName and incorrect Password
 #    Given User is on login page
