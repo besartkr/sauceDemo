@@ -1,12 +1,10 @@
-# .github/workflows/run-after-push.yml
-
 name: Run Tests After Push
 
 on:
   push:
     branches:
       - main
-      - 'feature/**'   # optional: run on any feature branch too
+      - 'feature/**'
 
 jobs:
   build-and-test:
@@ -27,7 +25,7 @@ jobs:
 
       - name: Upload test results (optional)
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: target/surefire-reports/
