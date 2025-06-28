@@ -52,7 +52,6 @@ public class LoginSteps {
 
     @When("user logs in with valid username \"([^\\\"]*)\" and password as \"([^\"]*)\"$")
     public void userLogsInWithValidUsernameUsernameAndPasswordPasswordCredentials(String user, String pass) {
-
         loginPage.multiUserlogin(user, pass);
     }
 

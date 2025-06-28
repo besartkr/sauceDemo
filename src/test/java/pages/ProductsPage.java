@@ -24,4 +24,8 @@ public class ProductsPage {
     public void openCart() {
         wait.waitForElementToBeClickable(cartIcon).click();
     }
+
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
 }

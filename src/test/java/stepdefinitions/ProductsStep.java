@@ -44,4 +44,10 @@ public class ProductsStep {
     public void userSelectsCartIcon() {
         cartPage.selectCartButton();
     }
-}
+
+    @And("Then User should see the inventory page title as {string}")
+    public void thenUserShouldSeeTheInventoryPageTitleAs(String expectedTitle) {
+            String actualTitle = productsPage.getPageTitle();
+            Assert.assertEquals(expectedTitle, actualTitle);
+        }
+    }

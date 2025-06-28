@@ -1,15 +1,16 @@
 @regression
 Feature: Login valid / invalid scenarios
 
-#  Scenario: Successful login
-#    Given user navigates to the login page
-#    When user logs in with valid credentials
-#    Then user should be logged in
-#
-#  Scenario: Failed login with invalid credentials
-#    Given user navigates to the login page
-#    When user logs in with invalid credentials
-#    Then user should see a error message
+  Scenario: Successful login
+    Given user navigates to the login page
+    When user logs in with valid credentials
+    And Then User should see the inventory page title as "Swag Labs"
+    And logout from the application
+
+  Scenario: Failed login with invalid credentials
+    Given user navigates to the login page
+    When user logs in with invalid credentials
+    Then user should see a error message
 
   Scenario Outline: Login with all available users
     Given user navigates to the login page

@@ -45,12 +45,12 @@ public class LoginPage {
 
      public void selectMenuSideBar()
     {
-        wait.waitForElementToBeVisible(menuList);
-        wait.waitForElementToBeClickable(menuList).click();
+        wait.waitForElementToBeVisible(menuBtn);
+        wait.waitForElementToBeClickable(menuBtn).click();
     }
 
     public void selectLogOutFromSideBar(){
-        wait.waitForElementToBeVisible(menuSideBarLogout);
+        wait.waitForElementToBeVisible(menuList);
         wait.waitForElementToBeClickable(menuSideBarLogout).click();
 
     }
