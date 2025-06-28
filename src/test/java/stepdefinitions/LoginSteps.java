@@ -36,7 +36,7 @@ public class LoginSteps {
 
     @Then("user should be logged in")
     public void loggedInConfirmation() {
-gi        new ProductsPage().openCart();
+      new ProductsPage().openCart();
     }
 
     @Then("user should see a error message")
