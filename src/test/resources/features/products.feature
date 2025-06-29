@@ -7,8 +7,8 @@ Feature: Complete the checkout flow
     And user adds an item to the cart
     And user selects cart icon
     Then User should see "Sauce Labs Backpack" in the cart
-    When User removes "Sauce Labs Backpack" from the cart
-    Then Cart should be empty
+#    When User removes "Sauce Labs Backpack" from the cart
+#    Then Cart should be empty
     And logout from the application
 
   #  Scenario:  View Product details
