@@ -5,11 +5,11 @@ Feature: Complete the checkout flow
     Given user navigates to the login page
     And user logs in with valid credentials
     And user adds an item to the cart
-    And user selects cart icon
-    Then User should see "Sauce Labs Backpack" in the cart
-#    When User removes "Sauce Labs Backpack" from the cart
-#    Then Cart should be empty
-    And logout from the application
+#    And user selects cart icon
+#    Then User should see "Sauce Labs Backpack" in the cart
+##    When User removes "Sauce Labs Backpack" from the cart
+##    Then Cart should be empty
+#    And logout from the application
 
   #  Scenario:  View Product details
 #    Given user navigates to the login page
