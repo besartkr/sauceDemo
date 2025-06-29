@@ -19,6 +19,7 @@ public class CheckoutPage {
     private By continueBtn = By.id("continue");
     private By finishBtn = By.id("finish");
     private By confirmMsg = By.className("complete-header");
+    private By backToHomeBtn = By.id("back-to-products");
     public String thankYouConfirmation = "Thank you";
     Properties props = new Properties();
 
@@ -64,5 +65,10 @@ public class CheckoutPage {
     public void assertCheckOutErrorMessage() {
         String errText = wait.waitForElementToBeVisible(errorMessage).getText();
         Assert.assertTrue(errText.contains("Last Name is required"));
+    }
+
+    public void selectBackToHomeBtn() {
+        wait.waitForElementToBeVisible(backToHomeBtn);
+        wait.waitForElementToBeClickable(backToHomeBtn).click();
     }
 }

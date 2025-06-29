@@ -24,6 +24,20 @@ Feature: Complete the checkout flow of happyPath
     Then user should see enter lastName error message
     And logout from the application
 
+     Scenario: Complete Purchase and navigate back
+       Given user navigates to the login page
+       And user logs in with valid credentials
+       When User adds a random product to the cart
+       Then Product should be displayed in the cart
+       And user selects cart icon
+       And user proceeds to checkout
+       When user completes the customer details in checkout process
+       And user selects Continue Checkout button
+       And user selects Finish Checkout button
+       Then user should see the confirmation message
+       And user can navigate back to products page
+       And Then User should see the inventory page title as "Swag Labs"
+       And logout from the application
 
 #  Scenario: Complete the checkout flow with all individual usernames - ensure correct privileges are applied
 #    Given user navigates to the login page
@@ -135,12 +149,3 @@ Feature: Complete the checkout flow of happyPath
 #    And user proceeds to checkout
 #   And user proceeds to checkout overview
 #  Then the order details cannot be changed
-
- #  Scenario: Complete Purchase and navigate back
-#    Given user navigates to the login page
-#    And user logs in with valid credentials
-#    And user adds an item to the cart
-#    And user proceeds to checkout
-#    When user completes the checkout process
-#    Then user should see the confirmation message
-#    And can navigate back to the products page
