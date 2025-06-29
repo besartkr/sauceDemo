@@ -33,4 +33,4 @@ Chrome
 ## How to Run
 Tests can be run using right-click 'TestRunner' or individual tests running the .feature file (right-click on the feature file)
 
-## view 1.3AdditionalScenariosToCover in test coverage
+## view 1.3AdditionalScenariosToCover for challeneges faced and scenarios to cover
