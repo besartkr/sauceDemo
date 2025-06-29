@@ -9,8 +9,9 @@ public class CartPage {
     private WebDriver driver = DriverManager.getDriver();
     private WaitUtils wait = new WaitUtils(driver);
     private By checkoutBtn = By.id("checkout");
-    private By removeBtn = By.id("remove-sauce-labs-backpack");
+    private By removeBtn = By.xpath(".//button[contains(text(),'Remove')]");
     private By cartBtn = By.cssSelector(".shopping_cart_link");
+    private By cartItems = By.className("inventory_item_name");
 
     /**
      * Selects the Checkout button on Checkout journey
@@ -63,7 +64,13 @@ public class CartPage {
      * Selects Cart button - Assertion would require to confirm the action
      */
     public void selectCartButton(){
-        wait.waitForElementToBeVisible(cartBtn).click();
+        wait.waitForElementToBeVisible(cartBtn);;
+        wait.waitForElementToBeClickable(cartBtn).click();
     }
 
+    public boolean isProductInCart(String productName) {
+        return driver.findElements(cartItems)
+                .stream()
+                .anyMatch(element -> element.getText().equalsIgnoreCase(productName));
+    }
 }

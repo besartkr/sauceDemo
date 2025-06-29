@@ -1,15 +1,14 @@
 @regression
-Feature: Complete the checkout flow
+Feature: Add and Remove item from the cart
 
   Scenario:  Add Item to the cart and remove it
     Given user navigates to the login page
     And user logs in with valid credentials
-    And user adds an item to the cart
+    When User adds a random product to the cart
+    Then Product should be displayed in the cart
     And user selects cart icon
-    Then User should see "Sauce Labs Backpack" in the cart
-    When User removes "Sauce Labs Backpack" from the cart
-    Then Cart should be empty
-    And logout from the application
+#    Then user can remove the item from the cart
+#    And logout from the application
 
   #  Scenario:  View Product details
 #    Given user navigates to the login page

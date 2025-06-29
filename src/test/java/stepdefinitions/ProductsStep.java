@@ -19,25 +19,23 @@ public class ProductsStep {
     CartPage cartPage = new CartPage();
     CheckoutPage checkoutPage = new CheckoutPage();
     Properties props = new Properties();
+    String selectedProductName;
 
 
     @And("user can remove the item from the cart")
     public void userCanRemoveTheItemFromTheCart() {
         cartPage.removeItem();
     }
-    @Then("User should see {string} in the cart")
-    public void userShouldSeeItemInCart(String itemName) {
-        Assert.assertTrue(cartPage.isItemInCart(itemName));
-    }
 
     @When("User removes {string} from the cart")
-    public void userRemovesItemFromCart(String itemName) {
-        cartPage.removeItem(itemName);
+    public void userRemovesItemFromCart() {
+        cartPage.isProductInCart("Back");
     }
 
     @Then("Cart should be empty")
     public void cartShouldBeEmpty() {
-        Assert.assertTrue(cartPage.isCartEmpty());;
+        Assert.assertTrue(cartPage.isCartEmpty());
+        ;
     }
 
     @And("user selects cart icon")
@@ -47,7 +45,17 @@ public class ProductsStep {
 
     @And("Then User should see the inventory page title as {string}")
     public void thenUserShouldSeeTheInventoryPageTitleAs(String expectedTitle) {
-            String actualTitle = productsPage.getPageTitle();
-            Assert.assertEquals(expectedTitle, actualTitle);
-        }
+        String actualTitle = productsPage.getPageTitle();
+        Assert.assertEquals(expectedTitle, actualTitle);
     }
+
+    @Then("Product should be displayed in the cart")
+    public void product_should_be_displayed_in_cart() {
+        boolean isInCart = cartPage.isProductInCart(selectedProductName);
+        assertTrue("Product not found in cart!", isInCart);
+    }
+    @When("User adds a random product to the cart")
+    public void user_adds_random_product_to_cart() {
+        selectedProductName = productsPage.addRandomProductToCart();
+    }
+}

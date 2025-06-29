@@ -10,6 +10,8 @@ Feature: Complete the checkout flow of happyPath
     And user selects Continue Checkout button
     And user selects Finish Checkout button
     Then user should see the confirmation message
+    And logout from the application
+
 
 
   Scenario: User with username: problem_user cannot bypass the checkout process
@@ -20,6 +22,7 @@ Feature: Complete the checkout flow of happyPath
     When user completes the customer details in checkout process
     And user selects Continue Checkout button
     Then user should see enter lastName error message
+    And logout from the application
 
 
 #  Scenario: Complete the checkout flow with all individual usernames - ensure correct privileges are applied
