@@ -45,7 +45,9 @@ public class CartPage {
      * @param itemName
      */
     public void removeItem(String itemName) {
-        wait.waitForElementToBeVisible(By.xpath("//div[text()='" + itemName + "']/ancestor::div[@class='cart_item']//button")).click();
+        wait.waitForElementToBeVisible(By.xpath("//div[text()='" + itemName + "']/ancestor::div[@class='cart_item']//button"));
+        wait.waitForElementToBeClickable(By.xpath("//div[text()='" + itemName + "']/ancestor::div[@class='cart_item']//button")).click();
+
     }
 
     /**
