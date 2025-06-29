@@ -53,4 +53,10 @@ public class CheckoutSteps {
     public void checkoutErrorMessageDisplayed() {
         checkoutPage.assertCheckOutErrorMessage();
     }
+
+    @And("user can navigate back to products page")
+    public void userCanNavigateBackToProductsPage() {
+        checkoutPage.selectBackToHomeBtn();
+        productsPage.getPageTitle();
+    }
 }

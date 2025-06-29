@@ -50,12 +50,12 @@ public class ProductsStep {
     }
 
     @Then("Product should be displayed in the cart")
-    public void product_should_be_displayed_in_cart() {
+    public void productShouldBedisplayedInCart() {
         boolean isInCart = cartPage.isProductInCart(selectedProductName);
         assertTrue("Product not found in cart!", isInCart);
     }
     @When("User adds a random product to the cart")
-    public void user_adds_random_product_to_cart() {
+    public void userAddsRandomProductToCart() {
         selectedProductName = productsPage.addRandomProductToCart();
     }
 }
