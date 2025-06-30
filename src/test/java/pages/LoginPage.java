@@ -58,10 +58,15 @@ public class LoginPage {
     public void logoutFromApplication() {
         selectMenuSideBar();
         selectLogOutFromSideBar();
+
+        
     }
 
     public void selectAlertIfPresent(){
         WaitUtils.handleAlertIfPresent(driver);
     }
 
+    public void quicDriverAfterTest(){
+        DriverManager.quitDriver();
+    }
 }

@@ -58,5 +58,7 @@ public class LoginSteps {
     @And("logout from the application")
     public void logoutFromTheApplication() {
         loginPage.logoutFromApplication();
+        loginPage.quicDriverAfterTest();
+
     }
 }
