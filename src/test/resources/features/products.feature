@@ -10,11 +10,13 @@ Feature: Add and Remove item from the cart
 #    Then user can remove the item from the cart
     And logout from the application
 
-  #  Scenario:  View Product details
-#    Given user navigates to the login page
-#    And user logs in with valid credentials
-#    And user selects a product
-#    Then Product Details are displayed
+    Scenario:  View Product details
+    Given user navigates to the login page
+    And user logs in with valid credentials
+    When User adds a random product to the cart
+    Then Product Details are displayed
+      And logout from the application
+
 
 
 #  Scenario: Add Item to the cart and login as a different user
