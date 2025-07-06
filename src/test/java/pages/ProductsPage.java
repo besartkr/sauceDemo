@@ -1,10 +1,12 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.DriverManager;
 import utils.WaitUtils;
+
 import java.util.List;
 import java.util.Random;
 
@@ -18,17 +20,18 @@ public class ProductsPage {
     private By cartItems = By.className("inventory_item_name");
     private By productsListClass = By.className("inventory_item");
     private By itemName = By.className("inventory_item_name");
+    private By sauceProduct = By.xpath(".//div[contains(text(),'Sauce')]");
 
 
     /**
-     *  Selects item from the product page to add to cart - assertion can be added to check the quantity increased in Cart
+     * Selects item from the product page to add to cart - assertion can be added to check the quantity increased in Cart
      */
     public void addItemToCart() {
         wait.waitForElementToBeVisible(addBackpack);
         wait.waitForElementToBeClickable(addBackpack).click();
     }
 
-        /**
+    /**
      * Selects Cart icon
      */
     public void openCart() {
@@ -55,5 +58,29 @@ public class ProductsPage {
 
         return productName;
     }
+
+    public String selectRandomProduct() {
+        wait.waitForElementToBeVisible(addToCartButton);
+
+        List<WebElement> items = driver.findElements(productsListClass);
+
+        if (items.isEmpty()) {
+            throw new RuntimeException("No products found on the page");
+        }
+        Random random = new Random();
+        int randomIndex = random.nextInt(items.size());
+        WebElement chosenItem = items.get(randomIndex);
+        String productName = chosenItem.findElement(itemName).getText();
+        chosenItem.findElement(sauceProduct).click();
+
+        return productName;
+    }
+
+
+    public void getProductsUrl() {
+        String getUrl = driver.getCurrentUrl();
+        Assert.assertTrue(getUrl.contains("https://www.saucedemo.com/inventory-item.html?id"));
+    }
+
 
 }

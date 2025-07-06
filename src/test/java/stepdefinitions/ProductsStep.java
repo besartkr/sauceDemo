@@ -20,7 +20,7 @@ public class ProductsStep {
     CheckoutPage checkoutPage = new CheckoutPage();
     Properties props = new Properties();
     String selectedProductName;
-
+    String selectedRandomProductName;
 
     @And("user can remove the item from the cart")
     public void userCanRemoveTheItemFromTheCart() {
@@ -57,5 +57,12 @@ public class ProductsStep {
     @When("User adds a random product to the cart")
     public void userAddsRandomProductToCart() {
         selectedProductName = productsPage.addRandomProductToCart();
+    }
+
+    @Then("Product Details are displayed")
+    public void productDetailsAreDisplayed() {
+        selectedRandomProductName = productsPage.selectRandomProduct();
+        productsPage.getProductsUrl();
+
     }
 }
