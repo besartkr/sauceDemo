@@ -32,5 +32,7 @@ Chrome
 
 ## How to Run
 Tests can be run using right-click 'TestRunner' or individual tests running the .feature file (right-click on the feature file)
+or
+mvn clean test
 
-## view 1.3AdditionalScenariosToCover for challeneges faced and scenarios to cover
+## view 1.3AdditionalScenariosToCover for challenges faced and scenarios to cover
