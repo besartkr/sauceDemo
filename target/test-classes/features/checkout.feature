@@ -60,7 +60,6 @@ Feature: Complete the checkout flow of happyPath
 #  Scenario: Checkout journey - Last Name and postcode are marked as mandatory
 #    Given user navigates to the login page
 #    When user logs in with valid <username> and <password> credentials
-#    And the cart is empty
 #    And user adds an item to the cart
 #    And user proceeds to checkout
 #    And completes the FirstName
