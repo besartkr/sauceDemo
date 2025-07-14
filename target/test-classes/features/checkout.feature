@@ -39,19 +39,22 @@ Feature: Complete the checkout flow of happyPath
        And Then User should see the inventory page title as "Swag Labs"
        And logout from the application
 
-#  Scenario: Complete the checkout flow with all individual usernames - ensure correct privileges are applied
+#  Scenario Outline: Complete the checkout flow with all individual usernames - ensure correct privileges are applied
 #    Given user navigates to the login page
-#    When user logs in with valid <username> and <password> credentials
-#    And the cart is empty
+#       When user logs in with valid username "<username>" and password as "<password>"
+#       Then user should be logged in
 #    And user adds an item to the cart
 #    And user proceeds to checkout
 #    When user completes the checkout process
 #    Then user should see the confirmation message
-
-#    Examples: | username      | password     |
-#    | standard_user | secret_sauce |
-#    | problem_user | secret_sauce |
-#    | performance_glitch_user | secret_sauce |
+#
+#       Examples:
+#         | username                | password     |
+#         | standard_user           | secret_sauce |
+#         | problem_user            | secret_sauce |
+#         | performance_glitch_user | secret_sauce |
+#         | error_user              | secret_sauce |
+#         | visual_user             | secret_sauce |
 
 
 #  Scenario: Checkout journey - Last Name and postcode are marked as mandatory
