@@ -13,8 +13,8 @@ public class DriverManager {
             WebDriverManager.chromedriver().setup();
 
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--incognito");
-            options.addArguments("--headless");
+//            options.addArguments("--incognito");
+//            options.addArguments("--headless");
             driver = new ChromeDriver(options);
 
             driver.manage().window().maximize();

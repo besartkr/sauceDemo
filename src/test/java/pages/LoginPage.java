@@ -29,7 +29,7 @@ public class LoginPage {
     }
 
     public void multiUserlogin(String user, String pass) {
-              wait.waitForElementToBeVisible(username).sendKeys(user);
+        wait.waitForElementToBeVisible(username).sendKeys(user);
         wait.waitForElementToBeVisible(password).sendKeys(pass);
         driver.findElement(loginBtn).click();
         selectAlertIfPresent();

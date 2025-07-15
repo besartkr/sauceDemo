@@ -19,12 +19,12 @@ Feature: Add and Remove item from the cart
 
 
 
-#  Scenario: Add Item to the cart and login as a different user
-#    Given user navigates to the login page
-#    And user logs in with valid credentials
-#    And user adds an item to the cart
-#    When I log in with as a different usr
-#    The item will not be displayed
+  Scenario: Add Item to the cart and login as a different user
+    Given user navigates to the login page
+    And user logs in with valid credentials
+    And user adds an item to the cart
+    When I log in with as a different usr
+
 
 #  Scenario: Add Item to the cart, then login and logout
 #    Given user navigates to the login page

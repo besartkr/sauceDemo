@@ -7,7 +7,7 @@ Feature: Add and Remove item from the cart
     When User adds a random product to the cart
     And user selects cart icon
     Then Product should be displayed in the cart
-#    Then user can remove the item from the cart
+    Then user can remove the item from the cart
     And logout from the application
 
     Scenario:  View Product details
